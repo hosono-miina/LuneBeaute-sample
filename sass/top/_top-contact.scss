@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@use "../mixin/mixin" as m;
+
+.contact {
+  margin-bottom: 180px;
+  background: linear-gradient(180deg, rgba(219,181,181,0.5046612394957983) 0%, rgba(195,152,152,1) 100%);
+  padding: 60px 0;
+
+  .section-title {
+    text-align: center;
+  }
+
+  .lead-text {
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  .link-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    @include m.tb {
+      flex-direction: column;
+    }
+
+    &-item {
+      text-align: center;
+      width: 45%;
+      @include m.tb {
+        width: 100%;
+        margin: 0 10px 60px 10px;
+      }
+
+
+      a {
+        font-family: "Playfair Display";
+        font-size: 2.4rem;
+        background: #fef4f4;
+        padding: 40px;
+        display: inline-block;
+        width: 100%;
+        outline: 1px solid #fef4f4;
+        outline-offset: 10px;
+        @include m.tb {
+          font-size: 1.6rem;
+          padding: 40px;
+        }
+        @include m.sp {
+          padding: 20px;
+        }
+
+        .fa-solid {
+          color: #987070;
+          font-size: 3.2rem;
+          padding-bottom: 10px;
+          display: block;
+          text-align: center;
+          @include m.sp {
+            font-size: 2.4rem;
+          }
+        }
+      }
+    }
+
+    &-item:last-child {
+      @include m.tb {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

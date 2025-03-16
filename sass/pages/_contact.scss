@@ -1,0 +1,107 @@
+@charset "UTF-8";
+@use "../mixin/mixin" as m;
+
+.contact-page {
+  padding-bottom: 200px;
+  margin-top: 100px;
+
+  .description {
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  .form {
+
+    li {
+      margin-bottom: 60px;
+    }
+
+    .head {
+      padding-bottom: 10px;
+      position: relative;
+
+      span {
+        background: #987070;
+        color: #FEF4F4;
+        padding: 5px 10px;
+        font-size: 1.2rem;
+        margin-left: 20px;
+      }
+    }
+
+    input {
+      background: rgba(152, 112, 112, 0.2);
+      padding: 10px;
+      width: 100%;
+    }
+
+    .input-field {
+      background: rgba(152, 112, 112, 0.2);
+      padding: 10px;
+      width: 100%;
+    }
+
+    .radio-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      column-gap: 20px;
+      @include m.tb {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10px;
+        column-gap: 10px;
+      }
+      @include m.sp {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+        column-gap: 10px;
+      }
+      
+      input[type=radio] {
+        appearance: none;
+        display: none;
+      }
+
+      input[type=radio] + span {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+
+      input[type=radio] + span:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f111";
+        display: inline-block;
+        margin-right: 0.2em;
+        margin-bottom: 5px;
+        font-weight: 400;
+        color: #987070;
+      }
+      
+      input[type=radio]:checked + span:before {
+        content: "\f192";
+        font-weight: 400;
+      }
+    }
+  }
+
+  .button-wrap {
+    text-align: center;
+
+    .submit {
+      display: inline-block;
+      background: #987070;
+      border: 1px solid #987070;
+      color: #FEF4F4;
+      padding: 20px 100px;
+      letter-spacing: 0.5em;
+    }
+
+    .submit:hover {
+      background: #FEF4F4;
+      border: 1px solid #987070;
+      color: #987070;
+      transition: 0.3s;
+    }
+  }
+}

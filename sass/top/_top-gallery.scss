@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@use "../mixin/mixin" as m;
+
+.photo-gallery {
+  margin-bottom: 180px;
+
+  .slider {
+
+    &-img {
+      width: calc(100vw/ 4);
+  
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

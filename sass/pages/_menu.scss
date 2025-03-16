@@ -1,0 +1,116 @@
+@charset "UTF-8";
+@use "../mixin/mixin" as m;
+
+.menu-page {
+  margin-top: 100px;
+
+  .menu-list {
+    padding-top: 60px;
+    margin-bottom: 180px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 200px;
+
+      .image {
+        position: relative;
+        z-index: 1;
+      }
+
+      .image::after {
+        position: absolute;
+        content: "";
+        width: 500px;
+        height: 500px;
+        background: linear-gradient(180deg, rgba(219,181,181,0.5) 0%, rgba(195,152,152,1) 100%);
+        top: 50%;
+        left: -40%;
+        transform: translateY(-50%);
+        z-index: -1;
+      }
+
+      .info {
+        width: 55%;
+
+        h3 {
+          font-family: "Playfair Display";
+          font-size: 4rem;
+          color: #987070;
+          text-align: center;
+          padding-bottom: 20px;
+        }
+  
+        .lead-text {
+          font-size: 2.4rem ;
+          padding-bottom: 20px;
+        }
+
+        .text {
+          position: relative;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid rgba(152, 112, 112, 0.5);
+        }
+
+        .treatment-details {
+          padding-bottom: 20px;
+        }
+      }
+    }
+
+    &-item-reverse {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      margin-bottom: 200px;
+
+      .image {
+        position: relative;
+        z-index: 1;
+      }
+
+      .image::after {
+        position: absolute;
+        content: "";
+        width: 500px;
+        height: 500px;
+        background: linear-gradient(180deg, rgba(219,181,181,0.5) 0%, rgba(195,152,152,1) 100%);
+        top: 50%;
+        right: -40%;
+        transform: translateY(-50%);
+        z-index: -1;
+      }
+
+      .info {
+        width: 55%;
+
+        h3 {
+          font-family: "Playfair Display";
+          font-size: 4rem;
+          color: #987070;
+          text-align: center;
+          padding-bottom: 20px;
+        }
+  
+        .lead-text {
+          font-size: 2.4rem ;
+          padding-bottom: 20px;
+        }
+
+        .text {
+          position: relative;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid rgba(152, 112, 112, 0.5);
+        }
+
+        .treatment-details {
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}

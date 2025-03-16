@@ -1,0 +1,211 @@
+@charset "UTF-8";
+@use "../mixin/mixin" as m;
+
+// font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #EAE9E3;
+  color: #302833;
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  color: #302833;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2%;
+  @include m.tb {
+    max-width: 720px;
+  }
+  @include m.sp {
+    max-width: 350px;
+  }
+}
+
+.section-title {
+  font-family: "Playfair Display";
+  font-size: 6.4rem;
+  color: #987070;
+  padding-bottom: 60px;
+  @include m.tb {
+    font-size: 5.6rem;
+  }
+  @include m.sp {
+    font-size: 4rem;
+  }
+}
+
+.page-title {
+  font-family: "Playfair Display";
+  font-size: 10rem;
+  color: #987070;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgba(152, 112, 112, 0.5);
+  @include m.tb {
+    font-size: 7rem;
+  }
+  @include m.sp {
+    font-size: 5rem;
+  }
+}
+
+.more-btn {
+  display: flex;
+  justify-content: center;
+
+  .btnripple {
+    position: relative;
+    display:inline-block;
+    text-decoration: none;
+    color: #302833;
+    outline: none;
+    font-family: "Playfair Display";
+  }
+
+  .btnripple:hover::before {
+    content: '';
+    position: absolute;
+    left:30%;
+    top:0;
+    border: 1px solid #987070;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity:1;
+    animation:1s circleanime forwards;
+  }
+
+  @keyframes circleanime {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform:scale(2);
+      opacity: 0;
+    }
+  }
+
+  .btnripple::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: -20px;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #302833;
+    border-right: 1px solid #302833;
+    transform: rotate(45deg);
+  }
+}
+
+.pc {
+  display: block;
+  @include m.tb {
+    display: none;
+  }
+  @include m.sp {
+    display: none;
+  }
+}
+
+.sp {
+  display: none;
+  @include m.tb {
+    display: block;
+  }
+  @include m.sp {
+    display: block;
+  }
+}
+
+.fadein {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-in-out;
+}
+
+.fadein-left {
+  opacity: 0;
+  transform: translateX(-100px); /* 左から */
+  transition: all 0.8s ease-in-out;
+}
+
+.fadein-right {
+  opacity: 0;
+  transform: translateX(100px); /* 右から */
+  transition: all 0.8s ease-in-out;
+}
+
+/* Loading背景画面設定　*/
+#splash {
+  /*fixedで全面に固定*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background:#EAE9E3;
+    text-align:center;
+    color:#fff;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+  
+  /* Loading画像中央配置　*/
+  #splash_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Loading アイコンの大きさ設定　*/
+  #splash_logo img {
+    width: 260px;
+  }
+  
+  /* fadeUpをするアイコンの動き */
+  .fadeUp{
+  animation-name: fadeUpAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  }
+  
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+
+  .contents {
+    padding-top: 100px;
+  }

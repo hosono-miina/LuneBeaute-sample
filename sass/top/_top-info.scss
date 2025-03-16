@@ -1,0 +1,127 @@
+@charset "UTF-8";
+@use "../mixin/mixin" as m;
+
+.salon-info {
+  margin-bottom: 180px;
+  position: relative;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section-title {
+    writing-mode: vertical-lr;
+    z-index: 1;
+  }
+
+  .info {
+    z-index: 1;
+    padding: 60px 0;
+    width: 55%;
+    @include m.tb {
+      width: 65%;
+    }
+
+    .salon-name {
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba(219,181,181,1);
+      @include m.tb {
+        flex-direction: column;
+      }
+
+      .en {
+        font-family: "Playfair Display";
+        font-size: 3.2rem;
+        @include m.tb {
+          display: block;
+        }
+      }
+
+      .ja {
+        font-size: 2.4rem;
+        @include m.tb {
+          display: block;
+        }
+      }
+    }
+
+    dl {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      @include m.tb {
+        flex-direction: column;
+      }
+
+      dt {
+        width: 25%;
+        padding-bottom: 30px;
+        font-family: "Playfair Display";
+        @include m.tb {
+          padding-bottom: 10px;
+        }
+      }
+
+      dd {
+        width: 75%;
+        padding-bottom: 30px;
+        @include m.tb {
+          width: 100%;
+        }
+      }
+
+      .google-map {
+        display: inline-block;
+        margin-top: 10px;
+
+        .arrow {
+          position: relative;
+          display: inline-block;
+          width: 20px;
+          height: 1px;
+          background: #302833;
+          top: -3px;
+        }
+
+        .arrow::before {
+          position: absolute;
+          content: "";
+          width: 10px;
+          height: 1px;
+          background: #302833;
+          transform: rotate(30deg);
+          top: -3px;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.salon-info::before {
+  position: absolute;
+  content: "";
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(219,181,181,0.5) 0%, rgba(195,152,152,1) 100%);
+  top: 15%;
+  left: 0;
+  @include m.tb {
+    width: 20%;
+  }
+}
+
+.salon-info::after {
+  position: absolute;
+  content: "";
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(219,181,181,0.5) 0%, rgba(195,152,152,1) 100%);
+  top: 0;
+  right: 0;
+  @include m.tb {
+    width: 70%;
+  }
+}
