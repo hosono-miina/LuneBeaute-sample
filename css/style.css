@@ -545,13 +545,13 @@ a:hover {
 
 .fadein-left {
   opacity: 0;
-  transform: translateX(-100px); /* 左から */
+  transform: translateX(-20px); /* 左から */
   transition: all 0.8s ease-in-out;
 }
 
 .fadein-right {
   opacity: 0;
-  transform: translateX(100px); /* 右から */
+  transform: translateX(20px); /* 右から */
   transition: all 0.8s ease-in-out;
 }
 
@@ -1838,33 +1838,46 @@ footer .wrapper .footer-nav-list .fa-instagram {
 .menu-page {
   margin-top: 100px;
 }
-.menu-page .menu-list {
-  padding-top: 60px;
-  margin-bottom: 180px;
-}
 .menu-page .menu-list-item {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  margin-bottom: 200px;
+  position: relative;
+  padding: 40px 10px;
+  margin-bottom: 180px;
+}
+@media (max-width: 768px) {
+  .menu-page .menu-list-item {
+    flex-direction: column;
+  }
 }
 .menu-page .menu-list-item .image {
+  width: 40%;
+  margin-left: 3%;
+  display: flex;
+  align-items: stretch;
   position: relative;
-  z-index: 1;
 }
-.menu-page .menu-list-item .image::after {
-  position: absolute;
-  content: "";
-  width: 500px;
-  height: 500px;
-  background: linear-gradient(180deg, rgba(219, 181, 181, 0.5) 0%, rgb(195, 152, 152) 100%);
-  top: 50%;
-  left: -40%;
-  transform: translateY(-50%);
-  z-index: -1;
+@media (max-width: 768px) {
+  .menu-page .menu-list-item .image {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+}
+.menu-page .menu-list-item .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .menu-page .menu-list-item .info {
   width: 55%;
+}
+@media (max-width: 768px) {
+  .menu-page .menu-list-item .info {
+    width: 100%;
+  }
 }
 .menu-page .menu-list-item .info h3 {
   font-family: "Playfair Display";
@@ -1872,6 +1885,11 @@ footer .wrapper .footer-nav-list .fa-instagram {
   color: #987070;
   text-align: center;
   padding-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .menu-page .menu-list-item .info h3 {
+    font-size: 3rem;
+  }
 }
 .menu-page .menu-list-item .info .lead-text {
   font-size: 2.4rem;
@@ -1886,30 +1904,62 @@ footer .wrapper .footer-nav-list .fa-instagram {
 .menu-page .menu-list-item .info .treatment-details {
   padding-bottom: 20px;
 }
-.menu-page .menu-list-item-reverse {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  margin-bottom: 200px;
-}
-.menu-page .menu-list-item-reverse .image {
-  position: relative;
-  z-index: 1;
-}
-.menu-page .menu-list-item-reverse .image::after {
+.menu-page .menu-list-item::after {
   position: absolute;
   content: "";
-  width: 500px;
-  height: 500px;
   background: linear-gradient(180deg, rgba(219, 181, 181, 0.5) 0%, rgb(195, 152, 152) 100%);
-  top: 50%;
-  right: -40%;
-  transform: translateY(-50%);
+  width: 35%;
+  height: 100%;
+  top: 0;
+  left: 0;
   z-index: -1;
+}
+@media (max-width: 768px) {
+  .menu-page .menu-list-item::after {
+    width: 20%;
+  }
+}
+.menu-page .menu-list-item-reverse {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  position: relative;
+  padding: 40px 10px;
+  margin-bottom: 180px;
+}
+@media (max-width: 768px) {
+  .menu-page .menu-list-item-reverse {
+    flex-direction: column;
+  }
+}
+.menu-page .menu-list-item-reverse .image {
+  width: 40%;
+  margin-right: 3%;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .menu-page .menu-list-item-reverse .image {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+}
+.menu-page .menu-list-item-reverse .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .menu-page .menu-list-item-reverse .info {
   width: 55%;
+}
+@media (max-width: 768px) {
+  .menu-page .menu-list-item-reverse .info {
+    width: 100%;
+  }
 }
 .menu-page .menu-list-item-reverse .info h3 {
   font-family: "Playfair Display";
@@ -1917,6 +1967,11 @@ footer .wrapper .footer-nav-list .fa-instagram {
   color: #987070;
   text-align: center;
   padding-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .menu-page .menu-list-item-reverse .info h3 {
+    font-size: 3rem;
+  }
 }
 .menu-page .menu-list-item-reverse .info .lead-text {
   font-size: 2.4rem;
@@ -1930,6 +1985,21 @@ footer .wrapper .footer-nav-list .fa-instagram {
 }
 .menu-page .menu-list-item-reverse .info .treatment-details {
   padding-bottom: 20px;
+}
+.menu-page .menu-list-item-reverse::after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(180deg, rgba(219, 181, 181, 0.5) 0%, rgb(195, 152, 152) 100%);
+  width: 35%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  .menu-page .menu-list-item-reverse::after {
+    width: 20%;
+  }
 }
 
 .contact-page {

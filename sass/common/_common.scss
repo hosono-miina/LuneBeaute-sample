@@ -148,13 +148,13 @@ a:hover {
 
 .fadein-left {
   opacity: 0;
-  transform: translateX(-100px); /* 左から */
+  transform: translateX(-20px); /* 左から */
   transition: all 0.8s ease-in-out;
 }
 
 .fadein-right {
   opacity: 0;
-  transform: translateX(100px); /* 右から */
+  transform: translateX(20px); /* 右から */
   transition: all 0.8s ease-in-out;
 }
 
